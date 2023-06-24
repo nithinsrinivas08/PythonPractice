@@ -1,4 +1,13 @@
 def palindromeSentence(sentence) :
+    """
+    Check if a sentence is a palindrome.
+ 
+    The function ignores whitespace, capitalisation and
+    punctuation in the sentence.
+ 
+    :param sentence: The sentence to check.
+    :return: True if `sentence` is a palindrome, False otherwise.
+    """
     string = ""
     for char in sentence :
         if char.isalnum() :
