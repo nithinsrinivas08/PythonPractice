@@ -1,4 +1,4 @@
-def isPalindrome(string):
+def isPalindrome(string: str) -> bool:
     """
     Check if a string is a palindrome.
  
@@ -15,3 +15,5 @@ if isPalindrome(word):
     print("'{}' is a Palindrome".format(word))
 else :
     print("'{}' is not a palindrome".format(word))
+
+p=isPalindrome()

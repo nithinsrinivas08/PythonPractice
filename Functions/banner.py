@@ -1,7 +1,16 @@
-def bannerText(text, screenWidth = 80) :
-    if len(text) > screenWidth - 4 :
-        print("EEK!!")
-        print("The text is too long to fit in the specified width", 60)
+def bannerText(text: str =" ", screenWidth : int = 80) -> None:
+    """ Print a string centred, with ** either side.
+  
+    :param text: The string to print.
+        An asterisk (*) will result in a row of asterisks.
+        The default will print a blank line, with a ** border at
+        the left and right edges.
+    :param screenWidth: The overall width to print within
+        (including the 4 spaces for the ** either side).
+    :raises ValueError: if the supplied string is too long to fit.
+    """
+    if len(text) > screenWidth - 4:
+        raise ValueError("String '{0}' is larger than specified width {1}".format(text, screenWidth))
     if text == "*" :
         print("*" * screenWidth)
     else :
