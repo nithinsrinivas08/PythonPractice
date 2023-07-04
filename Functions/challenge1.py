@@ -8,5 +8,17 @@ def fizzBuzz(number : int) -> str :
     else :
         return str(number)
 
-for i in range(1,101):
-    print(fizzBuzz(i))
+input("Play Fizz Buzz. Press ENTER to start")
+print()
+nextNumber = 0
+while nextNumber<99 :
+    nextNumber += 1
+    print(fizzBuzz(nextNumber))
+    nextNumber += 1
+    correctAnswer = fizzBuzz(nextNumber)
+    playersAnswer = input("Your go : ")
+    if playersAnswer != correctAnswer :
+        print("You lose, the correct answer was {}".format(correctAnswer))
+        break
+else :
+    print("Well done, you reached {}".format(nextNumber))
