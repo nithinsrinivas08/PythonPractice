@@ -12,21 +12,25 @@ BOLD = '\u001b[1m'
 UNDERLINE = '\u001b[4m'
 REVERSE = '\u001b[7m'
 
-def colorPrint(text : str, effect : str) -> None :
+def colorPrint(text : str, *effects : str) -> None :
     """
     Print `text` using the ANSI sequence to change color, etc
     
     :param text : The text to print
-    :param effect : The effect we want. One of the constants defined 
+    :param effects : The effect we want. One of the constants defined 
                     at the start o fthis module
     """
 
-    outputString = "{0},{1},{2}".format(effect, text, RESET)
+    effectString = "".join(effects)
+    outputString = "{0},{1},{2}".format(effectString, text, RESET)
     print(outputString)
 
 colorPrint("Hello, Red",RED)
+colorPrint("Hello, Red in bold",RED, BOLD)
 print("This should be in the default color")
 colorPrint("Hello, Blue", BLUE)
+colorPrint("Hello, Blue reversed", BLUE, REVERSE)
+colorPrint("Hello, Blue reversed and underline", BLUE, REVERSE, UNDERLINE)
 colorPrint("Hello, Yellow", YELLOW)
 colorPrint("Hello, Bold", BOLD)
 colorPrint("Hello, Underline", UNDERLINE)
