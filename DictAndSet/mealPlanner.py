@@ -1,10 +1,11 @@
 from contents import pantry, recipes
 
 def addShoppingItem(data :dict, item: str, amount:int) -> None:
-    if item in data:
-        data[item] += amount
+    '''if item in data:
+       data[item] += amount
     else :
-        data[item] = amount
+        data[item] = amount'''
+    data[item] = data.setdefault(item,0) + amount
 
 displayDict = {}
 
