@@ -1,9 +1,19 @@
-user_in = input('Please enter 3 numbers : ')
-string_tokens = user_in.split(', ')
-int_tokens = []
-for i in string_tokens :
-    int_tokens.append(int(i))
+def is_palindrome(string) :
+    #backwards = string[::-1]
+    #return backwards == string
+    return string[::-1].casefold() == string.casefold()
 
-a,b,c = int_tokens
-result = a + b - c
-print(result)
+
+def palidrome_sentence(sentence):
+    string=''
+    for char in sentence :
+        if char.isalnum():
+            string += char
+    return string[::-1].casefold() == string.casefold()
+
+
+word = input('Please enter a words to check: ')
+if palidrome_sentence(word) :
+    print('{} is a palidrome'.format(word))
+else :
+    print('{} is not a palidrome'.format(word))
