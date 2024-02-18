@@ -2,8 +2,8 @@ from recipesChallenge import myDeep
 import copy
 
 original = {
-    "Nit" : ["Sri", ["Programmer", "Teacher"]],
-    "hin" : ["nivas", ["Programmer","Teacher"]]
+    "Nit": ["Sri", ["Programmer", "Teacher"]],
+    "hin": ["nivas", ["Programmer", "Teacher"]]
 }
 
 copy1 = copy.deepcopy(original)
@@ -18,3 +18,4 @@ secList[1].append("BI")
 print(original)
 print(copy1)
 print(copy2)
+print(secList)
